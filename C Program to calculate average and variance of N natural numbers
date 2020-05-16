@@ -1,0 +1,40 @@
+// C Program to calculate average and variance of N natural numbers.
+// Coding Solutions
+// Solution by Sourav Chakraborty
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float x[100];
+    int  i, n;
+    float average, variance, sum = 0, sum1 = 0;
+
+    printf("Enter The Value Of N : \n");
+    scanf("%d", &n);
+    printf("Enter %d Positive Integers : \n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%f", &x[i]);
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        sum = sum + x[i];
+    }
+    average = sum / (float)n;
+
+    for (i = 0; i < n; i++)
+    {
+        sum1 = sum1 + pow((x[i] - average), 2);
+    }
+    variance = sum1 / (float)n;
+    printf("Average of all elements = %.2f\n", average);
+    printf("variance of all elements = %.2f\n", variance);
+ return 0;
+}
+
+
+// MAR_Lockdown
+// Sourav Chakraborty
